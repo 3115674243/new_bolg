@@ -1,0 +1,70 @@
+{
+  "name": "bower",
+  "description": "",
+  "main": "",
+  "authors": [
+    "czhang <czhang@cheweilai.cn>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "react": "^16.1.0",
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.1.3",
+    "moment": "^2.22.2",
+    "q": "1.0.1",
+    "lodash": "^4.17.11",
+    "swiper": "^4.4.1",
+    "jquery_lazyload": "jquery.lazyload#^1.9.7"
+  },
+  "install": {
+    "path": {
+      "js": "public/build_bower/{name}/js",
+      "map": "public/build_bower/{name}/js",
+      "css": "public/build_bower/{name}/css",
+      "scss": "public/build_bower/{name}/scss",
+      "svg": "public/build_bower/{name}/fonts",
+      "eot": "public/build_bower/{name}/fonts",
+      "ttf": "public/build_bower/{name}/fonts",
+      "woff": "public/build_bower/{name}/fonts",
+      "woff2": "public/build_bower/{name}/fonts"
+    },
+    "optioons": {
+      "includePackageNameInInstallPath": false
+    },
+    "sources": {
+      "jquery": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "bower_components/jquery/dist/jquery.js",
+        "bower_components/jquery/dist/jquery.min.map"
+      ],
+      "q": "bower_components/q/q.js",
+      "moment": "bower_components/moment/min/moment.min.js",
+      "lodash": "bower_components/lodash/dist/lodash.min.js",
+      "react": [
+        "bower_components/react/react.development.js",
+        "bower_components/react/react-dom.development.js",
+        "bower_components/react/react.production.min.js",
+        "bower_components/react/react-dom.production.min.js"
+      ],
+      "bootstrap": [
+        "bower_components/bootstrap/dist/css/bootstrap.min.css"
+      ],
+      "swiper": {
+        "mapping": [
+          { "bower_components/swiper/dist/js/swiper.min.js": "swiper.min.js" },
+          { "bower_components/swiper/dist/js/swiper.min.js.map": "maps/swiper.min.js.map" },
+          { "bower_components/swiper/dist/css/swiper.min.css": "swiper.min.css" }
+        ]
+      },
+      "jquery.lazyload": "bower_components/jquery.lazyload/lazyload.min.js"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="keywords" content="帮帮卖车">
+  <meta name="description" content="换车网，帮帮卖车">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="wap-font-scale"  content="no" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="/styles/newIndex.css">
+<link rel="stylesheet" href="/libs/cropper/cropper.css">
+<script src="/build_bower/q/js/q.js"></script>
+<script src="/build_bower/jquery/js/jquery.min.js"></script>
+<script src="/libs/cropper/cropper.js"></script>
+<script src="/libs/cropper/CustomCropper.js"></script>
+
+
+</head>
+<body>
+<div id="cropper-box">
+  <div style="overflow:hidden;max-Width:100%;max-Height:100%">
+    <img id="cropper_img"/>
+  </div>
+
+  <!--<div>-->
+    <!--<div class="cropper_img-preview" style="width:220px;height:161px;overflow:hidden"></div>-->
+  <!--</div>-->
+  <div class="hadle-wrapper flex-box jc-s text-center">
+    <input type="button" data-method="left" value="左转" />
+    <!--<input type="button" data-method="right" value="右转" />-->
+    <input type="button" data-method="reset" value="重置" />
+    <input type="button" data-method="submit" value="确定" />
+  </div>
+</div>
+
+<script type="text/javascript">
+  parent.window.customCropper = new CustomCropper("cropper_img", '.cropper_img-preview');
+  $(document.body).on('click', '[data-method]', function () {
+    var data = $(this).data(),
+      $target,
+      result;
+    if (data.method) {
+      switch (data.method) {
+        case "left": {
+          customCropper.rotateLeft();
+        };break;
+        case "right": {
+          customCropper.rotateRight();
+        };break;
+        case "reset": {
+          customCropper.reset();
+        };break;
+        case "submit": {
+          return customCropper.GetPreviewAndBase64();
+        };break;
+        default: break;
+      }
+    }
+  });
+</script>
+</body>
+</html>

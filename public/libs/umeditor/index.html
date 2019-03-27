@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>UMEDITOR 瀹屾暣demo</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link href="themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="third-party/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="umeditor.config.js"></script>
+  <script type="text/javascript" charset="utf-8" src="umeditor.min.js"></script>
+  <script type="text/javascript" src="lang/zh-cn/zh-cn.js"></script>
+  <style type="text/css">
+    h1 {
+      font-family: "寰蒋闆呴粦";
+      font-weight: normal;
+    }
+
+    .btn {
+      display: inline-block;
+      *display: inline;
+      padding: 4px 12px;
+      margin-bottom: 0;
+      *margin-left: .3em;
+      font-size: 14px;
+      line-height: 20px;
+      color: #333333;
+      text-align: center;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #f5f5f5;
+      *background-color: #e6e6e6;
+      background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+      background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+      background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+      background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+      background-repeat: repeat-x;
+      border: 1px solid #cccccc;
+      *border: 0;
+      border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+      border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+      border-bottom-color: #b3b3b3;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+      filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+      *zoom: 1;
+      -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn:hover,
+    .btn:focus,
+    .btn:active,
+    .btn.active,
+    .btn.disabled,
+    .btn[disabled] {
+      color: #333333;
+      background-color: #e6e6e6;
+      *background-color: #d9d9d9;
+    }
+
+    .btn:active,
+    .btn.active {
+      background-color: #cccccc \9;
+    }
+
+    .btn:first-child {
+      *margin-left: 0;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      color: #333333;
+      text-decoration: none;
+      background-position: 0 -15px;
+      -webkit-transition: background-position 0.1s linear;
+      -moz-transition: background-position 0.1s linear;
+      -o-transition: background-position 0.1s linear;
+      transition: background-position 0.1s linear;
+    }
+
+    .btn:focus {
+      outline: thin dotted #333;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+
+    .btn.active,
+    .btn:active {
+      background-image: none;
+      outline: 0;
+      -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn.disabled,
+    .btn[disabled] {
+      cursor: default;
+      background-image: none;
+      opacity: 0.65;
+      filter: alpha(opacity=65);
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+<h1>UMEDITOR 瀹屾暣demo</h1>
+
+<!--style缁欏畾瀹藉害鍙互褰卞搷缂栬緫鍣ㄧ殑鏈�缁堝搴�-->
+<script type="text/plain" id="myEditor" style="width:1000px;height:240px;">
+    <p>杩欓噷鎴戝彲浠ュ啓涓�浜涜緭鍏ユ彁绀�</p>
+
+
+</script>
+
+
+<div class="clear"></div>
+<div id="btns">
+  <table>
+    <tr>
+      <td>
+        <button class="btn" unselected="on" onclick="getAllHtml()">鑾峰緱鏁翠釜html鐨勫唴瀹�</button>
+        &nbsp;
+        <button class="btn" onclick="getContent()">鑾峰緱鍐呭</button>
+        &nbsp;
+        <button class="btn" onclick="setContent()">鍐欏叆鍐呭</button>
+        &nbsp;
+        <button class="btn" onclick="setContent(true)">杩藉姞鍐呭</button>
+        &nbsp;
+        <button class="btn" onclick="getContentTxt()">鑾峰緱绾枃鏈�</button>
+        &nbsp;
+        <button class="btn" onclick="getPlainTxt()">鑾峰緱甯︽牸寮忕殑绾枃鏈�</button>
+        &nbsp;
+        <button class="btn" onclick="hasContent()">鍒ゆ柇鏄惁鏈夊唴瀹�</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="btn" onclick="setFocus()">缂栬緫鍣ㄨ幏寰楃劍鐐�</button>
+        &nbsp;
+        <button class="btn" onmousedown="isFocus();return false;">缂栬緫鍣ㄦ槸鍚﹁幏寰楃劍鐐�</button>
+        &nbsp;
+        <button class="btn" onclick="doBlur()">缂栬緫鍣ㄥ彇娑堢劍鐐�</button>
+        &nbsp;
+        <button class="btn" onclick="insertHtml()">鎻掑叆缁欏畾鐨勫唴瀹�</button>
+        &nbsp;
+        <button class="btn" onclick="getContentTxt()">鑾峰緱绾枃鏈�</button>
+        &nbsp;
+        <button class="btn" id="enable" onclick="setEnabled()">鍙互缂栬緫</button>
+        &nbsp;
+        <button class="btn" onclick="setDisabled()">涓嶅彲缂栬緫</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="btn" onclick="UM.getEditor('myEditor').setHide()">闅愯棌缂栬緫鍣�</button>
+        &nbsp;
+        <button class="btn" onclick="UM.getEditor('myEditor').setShow()">鏄剧ず缂栬緫鍣�</button>
+        &nbsp;
+        <button class="btn" onclick="UM.getEditor('myEditor').setHeight(300)">璁剧疆缂栬緫鍣ㄧ殑楂樺害涓�300</button>
+        &nbsp;
+        <button class="btn" onclick="UM.getEditor('myEditor').setWidth(1200)">璁剧疆缂栬緫鍣ㄧ殑瀹藉害涓�1200</button>
+      </td>
+    </tr>
+
+  </table>
+</div>
+<table>
+  <tr>
+    <td>
+      <button class="btn" onclick="createEditor()"/>
+      鍒涘缓缂栬緫鍣�</button>
+      <button class="btn" onclick="deleteEditor()"/>
+      鍒犻櫎缂栬緫鍣�</button>
+    </td>
+  </tr>
+</table>
+
+<div>
+  <h3 id="focush2"></h3>
+</div>
+<script type="text/javascript">
+  //瀹炰緥鍖栫紪杈戝櫒
+  var um = UM.getEditor('myEditor');
+  um.addListener('blur', function () {
+    $('#focush2').html('缂栬緫鍣ㄥけ鍘荤劍鐐逛簡')
+  });
+  um.addListener('focus', function () {
+    $('#focush2').html('')
+  });
+  //鎸夐挳鐨勬搷浣�
+  function insertHtml() {
+    var value = prompt('鎻掑叆html浠ｇ爜', '');
+    um.execCommand('insertHtml', value)
+  }
+  function isFocus() {
+    alert(um.isFocus())
+  }
+  function doBlur() {
+    um.blur()
+  }
+  function createEditor() {
+    enableBtn();
+    um = UM.getEditor('myEditor');
+  }
+  function getAllHtml() {
+    alert(UM.getEditor('myEditor').getAllHtml())
+  }
+  function getContent() {
+    var arr = [];
+    arr.push("浣跨敤editor.getContent()鏂规硶鍙互鑾峰緱缂栬緫鍣ㄧ殑鍐呭");
+    arr.push("鍐呭涓猴細");
+    arr.push(UM.getEditor('myEditor').getContent());
+    alert(arr.join("\n"));
+  }
+  function getPlainTxt() {
+    var arr = [];
+    arr.push("浣跨敤editor.getPlainTxt()鏂规硶鍙互鑾峰緱缂栬緫鍣ㄧ殑甯︽牸寮忕殑绾枃鏈唴瀹�");
+    arr.push("鍐呭涓猴細");
+    arr.push(UM.getEditor('myEditor').getPlainTxt());
+    alert(arr.join('\n'))
+  }
+  function setContent(isAppendTo) {
+    var arr = [];
+    arr.push("浣跨敤editor.setContent('娆㈣繋浣跨敤umeditor')鏂规硶鍙互璁剧疆缂栬緫鍣ㄧ殑鍐呭");
+    UM.getEditor('myEditor').setContent('娆㈣繋浣跨敤umeditor', isAppendTo);
+    alert(arr.join("\n"));
+  }
+  function setDisabled() {
+    UM.getEditor('myEditor').setDisabled('fullscreen');
+    disableBtn("enable");
+  }
+
+  function setEnabled() {
+    UM.getEditor('myEditor').setEnabled();
+    enableBtn();
+  }
+
+  function getText() {
+    //褰撲綘鐐瑰嚮鎸夐挳鏃剁紪杈戝尯鍩熷凡缁忓け鍘讳簡鐒︾偣锛屽鏋滅洿鎺ョ敤getText灏嗕笉浼氬緱鍒板唴瀹癸紝鎵�浠ヨ鍦ㄩ�夊洖鏉ワ紝鐒跺悗鍙栧緱鍐呭
+    var range = UM.getEditor('myEditor').selection.getRange();
+    range.select();
+    var txt = UM.getEditor('myEditor').selection.getText();
+    alert(txt)
+  }
+
+  function getContentTxt() {
+    var arr = [];
+    arr.push("浣跨敤editor.getContentTxt()鏂规硶鍙互鑾峰緱缂栬緫鍣ㄧ殑绾枃鏈唴瀹�");
+    arr.push("缂栬緫鍣ㄧ殑绾枃鏈唴瀹逛负锛�");
+    arr.push(UM.getEditor('myEditor').getContentTxt());
+    alert(arr.join("\n"));
+  }
+  function hasContent() {
+    var arr = [];
+    arr.push("浣跨敤editor.hasContents()鏂规硶鍒ゆ柇缂栬緫鍣ㄩ噷鏄惁鏈夊唴瀹�");
+    arr.push("鍒ゆ柇缁撴灉涓猴細");
+    arr.push(UM.getEditor('myEditor').hasContents());
+    alert(arr.join("\n"));
+  }
+  function setFocus() {
+    UM.getEditor('myEditor').focus();
+  }
+  function deleteEditor() {
+    disableBtn();
+    UM.getEditor('myEditor').destroy();
+  }
+  function disableBtn(str) {
+    var div = document.getElementById('btns');
+    var btns = domUtils.getElementsByTagName(div, "button");
+    for (var i = 0, btn; btn = btns[i++];) {
+      if (btn.id == str) {
+        domUtils.removeAttributes(btn, ["disabled"]);
+      } else {
+        btn.setAttribute("disabled", "true");
+      }
+    }
+  }
+  function enableBtn() {
+    var div = document.getElementById('btns');
+    var btns = domUtils.getElementsByTagName(div, "button");
+    for (var i = 0, btn; btn = btns[i++];) {
+      domUtils.removeAttributes(btn, ["disabled"]);
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <title><%=title%></title>
+
+    <link href="/styles/index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link  href="/build_bower/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="/styles/login.css">
+    <script src="/build_bower/jquery/js/jquery.min.js"></script>
+    <script src="/build_bower/react/js/react.development.js"></script>
+    <script src="/build_bower/react/js/react-dom.development.js"></script>
+    <script src="/build_bower/moment/js/moment.min.js"></script>
+    <script src="/build_bower/lodash/js/lodash.min.js"></script>
+    <script src="/build_bower/q/js/q.js"></script>
+    <!-- 引入微信js-sdk-->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script src="/javascripts/weiXIn.js"></script>
+    <!--引入工具包-->
+    <script src="/javascripts/tools.js"></script>
+    <!-- 引入 echarts.js -->
+    <script src="/javascripts/echarts.min.js"></script>
+    <script src="/libs/layer/layer.js"></script>
+    <script src="/build/site.js"></script>
+    <script>
+        let uname='<%= uname%>';
+		let _id='<%= _id %>';
+		const user_image='<%= user_image%>';
+    </script>
+
+</head>
+
+<body >
+<%- body %>
+<div id="container"></div>
+</body>
+<script src="/build/page_router.js"></script>
+</html>

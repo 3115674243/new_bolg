@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="height: 100%;width: 100%">
+<iframe name="login" src="http://t-act.51huanche.com/activity/admin/login" style="height: 100%;width: 100%"></iframe>
+</body>
+<script>
+	document.domain='t-act.51huanche.com';
+	function setIframeHeight(iframe) {
+		if (iframe) {
+			var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+			if (iframeWin.document.body) {
+				iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+			}
+		}
+	};
+
+	window.onload = function () {
+		setIframeHeight( window.frames['login']);
+	};
+	const iframe = window.frames['login'];
+	const name = iframe.document.getElementById('login-user');
+	const pwd = iframe.document.getElementById('login-pwd');
+	console.log(name+':'+pwd);
+</script>
+</html>
