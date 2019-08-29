@@ -1,6 +1,7 @@
 module.exports={
   MongoSettings:{
-    mongodb:'mongodb://127.0.0.1:27017/blog',
+    //mongodb:'mongodb://127.0.0.1:27017/blog',
+    mongodb: "mongodb://"+encodeURIComponent('admin:admin')+"@127.0.0.1:27017/blog",
     options: {
       server: {
         socketOptions: { keepAlive: 1 },

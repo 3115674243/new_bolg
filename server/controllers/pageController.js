@@ -8,7 +8,7 @@ module.exports={
 		next();
 	},
 	loginPage:function(req,res,next){
-		let admin= new adminRender(req.session.user);
+		let admin= new adminRender();
 		return admin.loginRender(res);
 		next();
 	},
