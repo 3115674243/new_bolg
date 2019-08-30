@@ -3,9 +3,7 @@ var pageRouter = express.Router();
 var pageController=require('../controllers/pageController');
 module.exports=function () {
   /* GET home page. */
-  pageRouter.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
-  });
+  pageRouter.get('/', pageController.homePage);
   pageRouter.get('/yanwu', function(req, res, next) {
     res.render('yanwu', { title: 'Express' });
   });
