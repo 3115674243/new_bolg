@@ -85,37 +85,51 @@ ul, ol, * {
   width: 0; }
 
 .leftNav {
-  position: absolute;
-  width: calc(14%);
+  position: relative;
+  width: 100vw;
   padding-bottom: 0;
-  height: 100%;
+  height: 5vh;
+  min-height: 30px;
   transition: all 0.6s;
   background-color: rgba(41, 182, 246, 0.5);
   border-right: 1px solid #CCCCCC;
   text-align: center;
   z-index: 1000;
-  font-size: 0.2rem; }
+  font-size: 0.2rem;
+  display: flex;
+  justify-content: center; }
   .leftNav a {
     color: #ffffff;
     text-decoration: none; }
-  .leftNav li {
-    transition: background-color .7s;
-    padding: .16rem 0; }
-  .leftNav li:hover {
-    color: #C71622;
-    position: relative;
-    left: .01rem; }
   .leftNav .liRadio {
     background-color: #ffffff;
     color: #000000; }
+  .leftNav .itemRe {
+    padding: 0 3vw;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center; }
   .leftNav .contentDiv {
+    width: 70vw;
+    display: flex;
+    align-items: center;
     position: relative; }
   .leftNav .tabText {
-    margin: 2rem auto;
     width: 100%;
-    height: 60%; }
-    .leftNav .tabText ul {
-      padding: 1rem auto; }
+    height: 100%;
+    display: flex;
+    justify-content: center; }
+    .leftNav .tabText .listClass {
+      width: 50vw;
+      display: flex;
+      justify-content: center; }
+      .leftNav .tabText .listClass div {
+        transition: background-color .7s; }
+      .leftNav .tabText .listClass div:hover {
+        color: #C71622;
+        position: relative;
+        top: 5px; }
 
 /*登录*/
 .clearfix:after {
@@ -141,7 +155,24 @@ ul, ol, * {
     margin-top: .2rem; }
 
 .accountHello {
-  margin-bottom: .28rem;
-  text-align: center; }
+  display: flex;
+  text-align: center;
+  align-items: center; }
+
+@keyframes changeInto {
+  from {
+    top: -100%; }
+  to {
+    top: 0; } }
+@keyframes changeLeft {
+  from {
+    right: 100%; }
+  to {
+    right: 0; } }
+@keyframes changeRight {
+  from {
+    left: 100%; }
+  to {
+    left: 0; } }
 
 /*# sourceMappingURL=index.css.map */

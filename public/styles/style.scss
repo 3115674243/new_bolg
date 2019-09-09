@@ -3,9 +3,10 @@ $icon-font-path: "../build_bower/bootstrap/fonts/";
 *{margin:0;padding:0;}
 html {
   box-sizing: border-box;
+  font-size: 5.21vw;
 }
 /*媒体查询*/
-@media screen and (min-width: 212px) {
+/*@media screen and (min-width: 212px) {
   html {
     font-size: 28.4px
   }
@@ -59,6 +60,12 @@ html {
   html {
     font-size: 85.33px
   }
+}*/
+@font-face{
+  font-family: 'iconfont-css';
+  src: url("/font/icomoon/fonts/icomoon.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @media only screen and (min-width: 750px) {
   .wrapMax {
@@ -144,6 +151,10 @@ figure {
     transform: translate3d(-200vw, 0, 0);
   }
 }
+.tstAll{
+  transition: all .5s ease-in;
+}
+
 /*登录*/
 .form{background: rgba(255,255,255,0.2);width:400px;margin:120px auto; font-family: 宋体}
 /*阴影*/
@@ -158,10 +169,10 @@ input[type="text"],input[type="password"]{padding-left:0;}
 .homePage{
   position: relative;
   transition: all 0.6s;
-  left: 14%;
-  width: calc(86%);
-  height: 100%;
+  width: 100%;
+  height: 95vh;
   font-size: .2rem;
+  border-bottom: 1px solid #fefefe;
   .topIndex{
     border: 1px solid #00B7FF;
     width: 100%;
@@ -190,9 +201,177 @@ input[type="text"],input[type="password"]{padding-left:0;}
   .bodyHome{
     border: 1px solid #CBE087;
     width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    .navga{
+      width: 12vw;
+      height: 92%;
+      //background-color: red;
+      //animation: changeInto .5s ease-in-out;
+      position:relative;
+      .leftNavg{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: all .1s ease-in;
+        animation: changeLeft .5s ease-in-out;
+      }
+      .leftNavg:hover{
+        cursor:pointer;
+        transform: scale(1.4);
+      }
+      .rightNavg{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all .1s ease-in;
+        animation: changeRight .5s ease-in-out;
+      }
+      .rightNavg:hover{
+        cursor:pointer;
+        transform: scale(1.4);
+      }
+    }
+    .ctent{
+      width: 76vw;
+      height: 100%;
+      border-bottom: 1.5px solid #3399ff;
+    }
+
   }
-  .bodyHome:before{
-    content: "\f09a";
+
+  .homeFoter{
+    height: 5vw;
+    width: 100vw;
+  }
+}
+.givectent{
+  width: 100%;
+  height: 100%;
+  // background-color: #00B7FF;
+  display: flex;
+  grid-auto-columns: 1fr;
+  grid-template-columns:1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 16px;
+  align-items: center;
+  overflow:hidden;
+  .contBody{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    flex-direction:column;
+    align-items: center;
+    position: relative;
+    grid-auto-columns: 1fr;
+    grid-template-columns:40vh 50%;
+    img{
+      position: relative;
+      max-width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+
+    }
+  }
+  .contBody2{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    flex-direction:column;
+    align-items: center;
+    position: relative;
+    grid-auto-rows: 1fr;
+    grid-template-rows:50vh 40%;
+    .bodyList{
+      height: 100%;
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns:50% 50%;
+      grid-column-gap:16px;
+      overflow:hidden
+    }
+    .bodyText{
+      font-size: .3rem;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      animation: changeLeft .7s ease-in-out;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .contBody3{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    flex-direction:column;
+    align-items: center;
+    position: relative;
+    grid-auto-rows: 1fr;
+    grid-row-gap:16px;
+    grid-template-rows:21vh 21vh 21vh;
+    .body3Item{
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      .leftSpan{
+        width: 25%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: 'Nunito Sans', sans-serif;
+        color: #fff;
+        font-size: 9.5vh
+      }
+      .bodyText{
+        width: 75%;
+        padding-left: 16px;
+        text-align: start;
+        font-size: .35rem;
+      }
+    }
+  }
+  .contBody4{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-row-gap:16px;
+    grid-template-rows:20vh 40% 20%;
+    .bodyItem{
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation:changeLeft .7s ease-in-out;
+    }
+    h2{
+      color: #fff;
+    }
+  }
+
+  .contText{
+    display: flex;
+    position: relative;
+    animation: changeInto 1s ease-in-out;
+    height: 100%;
+    width: 100%;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-align: start;
+    h2{
+      color: #FFFFFF;
+    }
   }
 }
 .albumPage{

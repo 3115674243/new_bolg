@@ -17,7 +17,7 @@ var Album = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Album.__proto__ || Object.getPrototypeOf(Album)).call(this));
 
         _this.state = {
-            dataMap: { "2019-3-4": [{ url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }], "2019-3-5": [{ url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/image/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }] }
+            dataMap: { "2019-3-4": [{ url: ["images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情真好", text: "这是随笔" }], "2019-3-5": [{ url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }, { url: ["/images/ceshi.jpg"], name: "今天心情也好", text: "这是随笔" }] }
         };
         return _this;
     }
@@ -51,16 +51,22 @@ var Album = function (_React$Component) {
                             { className: "album", key: key },
                             React.createElement(
                                 "div",
-                                { className: "" },
+                                { className: "dateTitle" },
                                 key
                             ),
                             React.createElement(
                                 "div",
                                 { className: "item" },
                                 dataMap[key].map(function (item, index) {
+
                                     return React.createElement(
                                         "div",
-                                        { className: "itemitem", key: key + "_" + index },
+                                        { className: "itemBody", key: key + "_" + index },
+                                        React.createElement(
+                                            "div",
+                                            { className: "itemitem" },
+                                            React.createElement("img", { "data-src": item.url, src: item.url })
+                                        ),
                                         item.name
                                     );
                                 })

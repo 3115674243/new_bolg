@@ -21,7 +21,7 @@ class Album extends React.Component{
             	{url:["/images/ceshi.jpg"],name:"今天心情真好",text:"这是随笔"},
             	{url:["/images/ceshi.jpg"],name:"今天心情真好",text:"这是随笔"},
             	{url:["/images/ceshi.jpg"],name:"今天心情真好",text:"这是随笔"},
-            
+
             ],"2019-3-5":[
             	{url:["/images/ceshi.jpg"],name:"今天心情也好",text:"这是随笔"},
             	{url:["/images/ceshi.jpg"],name:"今天心情也好",text:"这是随笔"},
@@ -43,7 +43,7 @@ class Album extends React.Component{
         }
     }
     componentWillMount(){
-    
+
     }
     getData(){
         let url="";
@@ -65,15 +65,15 @@ class Album extends React.Component{
 	                    </div>
 	                    <div className="item">
 		                    {dataMap[key].map((item,index)=>{
-		                    	
-			                    return <div className="itemBody">
-			                    <div className="itemitem" key={key+"_"+index}>
-				                    <img data-src={item.url} src={item.url} className=""/>
+
+			                    return <div className="itemBody" key={key+"_"+index}>
+			                    <div className="itemitem" >
+				                    <img data-src={item.url} src={item.url} />
 			                    </div>
 				                    {item.name}
 			                    </div>
 		                    })}
-		                    
+
 	                    </div>
                     </div>
                 })}

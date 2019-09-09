@@ -96,7 +96,7 @@ var LeftNav = function (_React$Component2) {
         layer.open({
           type: 2,
           title: '',
-          area: ['10rem', '7rem'],
+          area: ['4rem', '5.5rem'],
           content: ['/login/', 'no'],
           maxmin: true,
           end: function end() {
@@ -118,8 +118,8 @@ var LeftNav = function (_React$Component2) {
           $("#_id").val("");
           that.setState({ name: '', user_id: '' });
           layer.msg("退出成功", {
-            time: 2000, //2s后自动关闭
-            btn: ['明白了', '知道了']
+            time: 2000 //2s后自动关闭
+            //btn: ['明白了', '知道了']
           });
         }
       }).catch(function (err) {
@@ -140,7 +140,7 @@ var LeftNav = function (_React$Component2) {
         React.createElement("input", { type: "hidden", id: "username", readOnly: true }),
         React.createElement("input", { type: "hidden", id: "_id", readOnly: true }),
         React.createElement(
-          "div",
+          "nav",
           { className: "contentDiv" },
           React.createElement(
             "div",
@@ -157,14 +157,14 @@ var LeftNav = function (_React$Component2) {
               ) : "请登录"
             ),
             React.createElement(
-              "ul",
-              null,
+              "div",
+              { className: "listClass" },
               React.createElement(
                 "a",
                 { href: 'javascript:void(0)', onClick: this.changeType.bind(this, "home") },
                 React.createElement(
-                  "li",
-                  { className: this.state.type == "home" ? "liRadio" : "" },
+                  "div",
+                  { className: this.state.type == "home" ? "liRadio itemRe" : "itemRe" },
                   "\u9996\u9875"
                 )
               ),
@@ -172,16 +172,16 @@ var LeftNav = function (_React$Component2) {
                 "a",
                 { href: 'javascript:void(0)', onClick: this.loginOut.bind(this) },
                 React.createElement(
-                  "li",
-                  null,
+                  "div",
+                  { className: "itemRe" },
                   "\u9000\u51FA"
                 )
               ) : React.createElement(
                 "a",
                 { href: 'javascript:void(0)', onClick: this.loginData.bind(this) },
                 React.createElement(
-                  "li",
-                  null,
+                  "div",
+                  { className: "itemRe" },
                   "\u767B\u5F55"
                 )
               ),
@@ -189,8 +189,8 @@ var LeftNav = function (_React$Component2) {
                 "a",
                 { href: 'javascript:void(0)', onClick: this.changeType.bind(this, "album") },
                 React.createElement(
-                  "li",
-                  { className: this.state.type == "album" ? "liRadio" : "" },
+                  "div",
+                  { className: this.state.type == "album" ? "liRadio itemRe" : "itemRe" },
                   "\u76F8\u518C"
                 )
               ),
@@ -198,8 +198,8 @@ var LeftNav = function (_React$Component2) {
                 "a",
                 { href: 'javascript:void(0)', onClick: this.changeType.bind(this, "home") },
                 React.createElement(
-                  "li",
-                  { className: this.state.type == "home" ? "liRadio" : "" },
+                  "div",
+                  { className: this.state.type == "home" ? "liRadio itemRe" : "itemRe" },
                   "\u9996\u9875"
                 )
               ),
@@ -207,8 +207,8 @@ var LeftNav = function (_React$Component2) {
                 "a",
                 { href: 'javascript:void(0)', onClick: this.changeType.bind(this, "home") },
                 React.createElement(
-                  "li",
-                  { className: this.state.type == "home" ? "liRadio" : "" },
+                  "div",
+                  { className: this.state.type == "home" ? "liRadio itemRe" : "itemRe" },
                   "\u9996\u9875"
                 )
               )
@@ -465,4 +465,10 @@ var getQueryString = function getQueryString(name) {
   var r = window.location.search.substr(1).match(reg);
   if (r != null) return unescape(r[2]);
   return null;
+};
+
+var q_setState = function q_setState(obj, that) {
+  var defer = Q.defer();
+  that.setState(obj, defer.makeNodeResolver());
+  return defer.promise;
 };

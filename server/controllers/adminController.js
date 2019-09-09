@@ -10,7 +10,7 @@ module.exports={
      var _data=req.body;
      let username=_data.username;
      let password=_data.password;
-  
+
      console.log(username,password);
      if(username&&password){
          let _user=new User();
@@ -19,16 +19,16 @@ module.exports={
                  req.session.user=rst;
              }
              let data={uname:rst.uname,_id:rst._id};
-             
+
              res.json(_user.rst.success("ok",data).toObj());
          }).catch(err=>{
-             res.status(400).json({ message: err.message, statusCode: 400000, error: true});
+             res.status(500).json({ message: err, statusCode: 400000, error: true});
              next(err,req,res);
          });
      }else {
          return res.status(400).json({ message: '参数不全', statusCode: 400000, error: true});
      }
-    
+
   },
     register:function (req,res,next) {
     var _data=req.body;
@@ -72,7 +72,7 @@ module.exports={
 		//res.json(_user.rst.success("ok","微信接口接入成功").toObj())
 	},
 	weixinConfig:function(req,res,next){
-  
+
 		var url = req.query.url || '';
 		var _timeStamp = Math.floor(Date.now() / 1000) + "";
     	let _weiXin=new weixin();
@@ -80,7 +80,7 @@ module.exports={
 		var sign = '';
 		return _weiXin.getJSApiTicket().then(rst=>{
 			let ticket=rst.ticket;
-		
+
 			if(ticket){
 				return Q(_weiXin.generateSign({noncestr: _nonceStr, jsapi_ticket: ticket, timestamp: _timeStamp, url: url})).then(_sign=>{
 					sign=_sign;
@@ -90,7 +90,7 @@ module.exports={
 				console.log("未获取到ticket")
 			}
 		}).then(accessToken=>{
-			
+
 			var _obj = {
 				appId:config.weiXInConfig.appId,
 				timeStamp:_timeStamp,
@@ -110,7 +110,7 @@ module.exports={
 	},
 	testCapture:function(req,res,next){
     	let rst={};
-    	
+
     	Q.fcall(function(){
 				try{request({
 					uri: 'http://s-act.51huanche.com/api/resource/brands',
@@ -154,7 +154,7 @@ module.exports={
 			}).catch(err=>{
 				console.log(err);
 			})
-		
+
 	}
-	
+
 };

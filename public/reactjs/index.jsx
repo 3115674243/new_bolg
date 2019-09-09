@@ -1,3 +1,5 @@
+
+
 class Home_Page extends React.Component{
   constructor(){
     super();
@@ -16,7 +18,7 @@ class Home_Page extends React.Component{
   }
   navShowAndHidden(e,state){
 	  let evt=document.getElementById('leftNav');
-	 
+
 	 // console.log(state);
     switch (state){
         case 'left':
@@ -32,7 +34,7 @@ class Home_Page extends React.Component{
             }
 		  break;
     }
-   
+
   }
   changeType(value){
       if(this.state.type!=value){
@@ -47,7 +49,7 @@ class Home_Page extends React.Component{
         <LeftNav changeType={this.changeType.bind(this)} type={this.state.type}/>
           {type=="home"?<HomeView/>:
               type=="album"?<Album/>:<HomeView/>}
-        
+
         <BackGround/>
       </div>
       )
@@ -59,101 +61,194 @@ class HomeView extends React.Component{
     super();
 	  this.state={
 		  user_image:user_image||null,
+          max:4,//轮播最大值
+          index:0,//轮播位置
+          show:true
 	  }
   }
+    componentDidMount(){
+    }
   componentWillMount(){
 
   }
 
+  changeList(){
+      let that=this;
+      let i =that.state.index;
+      let render
+      switch (i) {
+          case 0:
+              render=<div className={"givectent"}>
+                  <div className={"contBody"}>
+                      <img src={"/images/login/bg.jpg"} style={{    height: "60vh", width: "90%", animation: "changeInto .5s ease-in-out"}}/>
+                      <img  src={"/images/my.jpg"} style={{position: "relative", left: "-17vh",width: "35vh", animation: "changeInto .7s ease-in-out"}}/>
+                  </div>
+                  <div className={"contText"}>
+                      <div >
+                          <h2>
+                             您好，我是张超<br/>
+                              高级软件工程师<br/>
+                          </h2>
+                              您的项目无法把控进度吗？您无法知悉开发流程各个环节的难点和成本吗？<br/>
+                              您的项目遇到了技术问题吗？我认为我可以为您分担些压力<br/>
+                              我的特长是nodejs方向的开发，面对一般的面向对象型语言都有一定的了解<br/>
+                              并且我还是一名兼职前端工程师，针对android移动端熟悉react-native制作<br/>
+                      </div>
+                  </div>
+              </div>;
+              break;
+          case 1:
+              render=<div className={"givectent"}>
+                  <div className={"contBody2"}>
+                      <div className={"bodyList"}>
+                          <img src={"/images/project/素材.jpg"} style={{position: "relative",height:"100%",margin: "auto",animation: "changeInto .4s ease-in-out"}}/>
+                          <img src={"/images/project/素材3.png"} style={{position: "relative",height:"100%",margin: "auto",animation: "changeInto .6s ease-in-out"}}/>
+                      </div>
+                      <div className={"bodyText"}>
+                        独立研发reactnative移动端，用于工业化
+                      </div>
+                  </div>
+                  <div className={"contText"}>
+                      <div style={{width: "80%"}}>
+                      <h2>快速学习并运用实战</h2>
+                      您的业务涉及到了移动端开发？微信小程序，androidAPP、H5网页应用，都不在话下<br/>
+                      我熟练运用reactnative开发android应用，并了解rn原生交互
+                      </div>
+                  </div>
+              </div>
+              break;
+          case 2:
+              render=<div className={"givectent"}>
+                <div className={"contBody3"} style={{position:"relative",animation: "changeInto .7s ease-in-out"}}>
+                    <div className={"body3Item"} style={{position:"relative", animation: "changeInto .7s ease-in-out"}}>
+                        <div className={"leftSpan"}>01</div>
+                        <div className={"bodyText"}>良好的代码素养</div>
+                    </div>
+                    <div className={"body3Item"} style={{position:"relative", animation: "changeInto .9s ease-in-out"}}>
+                        <div className={"leftSpan"}>02</div>
+                        <div className={"bodyText"}>个人目标确定</div>
+                    </div>
+                    <div className={"body3Item"} style={{position:"relative",animation: "changeInto 1.2s ease-in-out"}}>
+                        <div className={"leftSpan"}>03</div>
+                        <div className={"bodyText"}>基于业务综合软件方案</div>
+                    </div>
+                </div>
+                <div className={"contBody3"} style={{position:"relative",animation: "changeInto 1.2s ease-in-out"}}>
+                    <div className={"body3Item"}>
+                        <div className={"leftSpan"}>04</div>
+                        <div className={"bodyText"}>良好的需求客户与开发技术对接</div>
+                    </div>
+                    <div className={"body3Item"} style={{position:"relative",animation: "changeInto 1.5s ease-in-out"}}>
+                        <div className={"leftSpan"}>05</div>
+                        <div className={"bodyText"}>项目流程清晰明朗</div>
+                    </div>
+                    <div className={"body3Item"} style={{position:"relative",animation: "changeInto 1.7s ease-in-out"}}>
+                        <div className={"leftSpan"}>06</div>
+                        <div className={"bodyText"}>将您的需求转化为产品</div>
+                    </div>
+                </div>
+              </div>
+              break;
+          case 3:
+              render=<div className={"givectent"}>
+                  <div className={"contBody4"}>
+
+                      <img src={"/images/project/大区图片.png"} style={{position: "relative",height:"100%",top: "12vh",margin: "auto",animation: "changeLeft .5s ease-in-out"}}/>
+
+
+                      <img src={"/images/project/大区管理.png"} style={{position: "relative",height:"100%",margin: "auto",animation: "changeInto .7s ease-in-out"}}/>
+
+                      <div className={"bodyItem"}>
+                          <h2>平台化大区数据统计</h2>
+                      </div>
+                  </div>
+                  <div className={"contText"}>
+                      <div>
+                          拥有良好的代码习惯<br/>
+                          高效的接口设计<br/>
+                          良好的解耦<br/>
+                          高度复用性的结构<br/>
+                          <h2>构建快速稳定的数据交互</h2>
+                      </div>
+                  </div>
+              </div>
+              break;
+          case 4:
+              render=<div className={"givectent"}>
+                  <div className={"contBody4"}>
+                      
+                  </div>
+                  <div className={"contText"}>
+                      <div>
+
+                      </div>
+                  </div>
+              </div>
+              break;
+      }
+      return render;
+  }
+
   render(){
+      let that=this;
+      let Icon=antd.Icon;
+      let index=that.state.index;
+      let max=that.state.max;
     return (
       <div className={'homePage  noScrollDiv'}>
-        <div className="home">
-            <div className="topIndex">
-              <div className="portrait">
-                <img src={this.state.user_image|| '/images/portrait.jpg'}/>
+          <div className="bodyHome">
+              <div className={"navga"}>
+                    <div className={"leftNavg"}>
+                        {that.state.index>0?<Icon type="left" style={{color:"#fff",fontSize:30}} onClick={()=>{q_setState({show:false},that).then(ok=>{
+                            q_setState({index:index-1,show:true},that)
+                        })}}/>:null}
+
+                    </div>
               </div>
-            </div>
-            <div className="bodyHome">
-              主体
-            </div>
-          <div id="main" style={{width: '4rem',height: '2.56rem'}} className="divCtent">
+              <div className={"ctent"}>
+                  {that.state.show?that.changeList():null}
+              </div>
+              <div className={"navga"}>
+                  <div className={"rightNavg"}>
+                      {that.state.index<max-1?<Icon type="right" style={{color:"#fff",fontSize:30}} onClick={()=>{
+
+                          q_setState({show:false},that).then(ok=>{
+                              q_setState({index:index+1,show:true},that)
+                          })
+                      }}/>:null}
+                  </div>
+              </div>
           </div>
+          <footer className={"homeFoter"} >
+
+          </footer>
 		</div>
-      </div>
     )
   }
-  componentDidMount(){
-// 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('main'));
-// 指定图表的配置项和数据
-    var option = {
-      tooltip : {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
-      },
-      visualMap: {
-        show: false,
-        min: 80,
-        max: 600,
-        inRange: {
-          colorLightness: [0, 1]
+
+}
+class homeBody  extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
         }
-      },
-      series : [
-        {
-          name:'文章类型',
-          type:'pie',
-          radius : '55%',
-          center: ['50%', '50%'],
-          data:[
-            {value:335, name:'直接访问'},
-            {value:310, name:'邮件营销'},
-            {value:274, name:'联盟广告'},
-            {value:235, name:'视频广告'},
-            {value:400, name:'搜索引擎'}
-          ].sort(function (a, b) { return a.value - b.value; }),
-          roseType: 'radius',
-          label: {
-            normal: {
-              textStyle: {
-                color: 'rgba(255, 255, 255, 0.9)'
-              }
-            }
-          },
-          labelLine: {
-            normal: {
-              lineStyle: {
-                color: 'rgba(255, 255, 255, 0.9)'
-              },
-              smooth: 0.2,
-              length: 10,
-              length2: 20
-            }
-          },
-          itemStyle: {
-            normal: {
-              color: '#00B7FF',
-              shadowBlur: 200,
-              shadowColor: 'rgba(41, 182,246, 0.5)'
+    }
+    componentWillMount(){
+        let that=this;
+    }
+    getRender(item){
 
-            }
+    }
+    render(){
+        return <div className={"ctent"}>
+            <div className={"contBody"}>
 
-          },
+            </div>
+            <div className={"contText"}>
 
-          animationType: 'scale',
-          animationEasing: 'elasticOut',
-          animationDelay: function (idx) {
-            return Math.random() * 200;
-          }
-        }
-      ]
-    };
-
-// 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
-
-  }
+            </div>
+        </div>
+    }
 }
 
 

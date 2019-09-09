@@ -37,7 +37,7 @@ class LeftNav extends React.Component{
       }
       this.setState(obj);
   }
-  
+
   loginData(){
       let that=this;
       let winWidth=$(document).width();
@@ -100,23 +100,23 @@ class LeftNav extends React.Component{
       <div className='leftNav noScrollDiv' id={'leftNav'}>
           <input type={"hidden"} id={"username"} readOnly={true}/>
 		  <input type={"hidden"} id={"_id"} readOnly={true}/>
-        <div className='contentDiv'>
+        <nav className='contentDiv'>
           <div className='tabText'>
               <div className="accountHello">
                   {this.state.name? <div>欢迎您<br/>{this.state.name}</div>:"请登录"}
               </div>
-            <ul>
-              <a href={'javascript:void(0)'} onClick={this.changeType.bind(this,"home")} ><li className={this.state.type=="home"?"liRadio":""}>首页</li></a>
+            <div className={"listClass"}>
+                <a href={'javascript:void(0)'} onClick={this.changeType.bind(this,"home")} ><div className={ this.state.type=="home"?"liRadio itemRe":"itemRe"}>首页</div></a>
                 {this.state.user_id?
-					<a href={'javascript:void(0)'} onClick={this.loginOut.bind(this)}><li>退出</li></a>:
-					<a href={'javascript:void(0)'} onClick={this.loginData.bind(this)}><li>登录</li></a>
+                    <a href={'javascript:void(0)'} onClick={this.loginOut.bind(this)}><div className="itemRe">退出</div></a>:
+                    <a href={'javascript:void(0)'} onClick={this.loginData.bind(this)}><div className="itemRe">登录</div></a>
                 }
-              <a href={'javascript:void(0)'} onClick={this.changeType.bind(this,"album")} ><li className={this.state.type=="album"?"liRadio":""}>相册</li></a>
-              <a href={'javascript:void(0)'} onClick={this.changeType.bind(this,"home")} ><li className={this.state.type=="home"?"liRadio":""}>首页</li></a>
-              <a href={'javascript:void(0)'} onClick={this.changeType.bind(this,"home")}><li  className={this.state.type=="home"?"liRadio":""}>首页</li></a>
-            </ul>
+                <a href={'javascript:void(0)'} onClick={this.changeType.bind(this,"album")} ><div className={ this.state.type=="album"?"liRadio itemRe":"itemRe"}>相册</div></a>
+                <a href={'javascript:void(0)'} onClick={this.changeType.bind(this,"home")} ><div className={ this.state.type=="home"?"liRadio itemRe":"itemRe"}>首页</div></a>
+                <a href={'javascript:void(0)'} onClick={this.changeType.bind(this,"home")}><div  className={this.state.type=="home"?"liRadio itemRe":"itemRe"}>首页</div></a>
+            </div>
           </div>
-        </div>
+        </nav>
       </div>
     )
   }
@@ -308,3 +308,9 @@ var getQueryString = function(name) {
 	if (r != null) return unescape(r[2]);
 	return null;
 };
+
+var q_setState=function (obj ,that){
+    var defer = Q.defer();
+    that.setState(obj, defer.makeNodeResolver());
+    return defer.promise;
+}
