@@ -22,7 +22,8 @@
     "q": "1.0.1",
     "lodash": "^4.17.11",
     "swiper": "^4.4.1",
-    "jquery_lazyload": "jquery.lazyload#^1.9.7"
+    "jquery_lazyload": "jquery.lazyload#^1.9.7",
+    "mm-antd": "antd#^3.10.4"
   },
   "install": {
     "path": {
@@ -59,12 +60,21 @@
       ],
       "swiper": {
         "mapping": [
-          { "bower_components/swiper/dist/js/swiper.min.js": "swiper.min.js" },
-          { "bower_components/swiper/dist/js/swiper.min.js.map": "maps/swiper.min.js.map" },
-          { "bower_components/swiper/dist/css/swiper.min.css": "swiper.min.css" }
+          {
+            "bower_components/swiper/dist/js/swiper.min.js": "swiper.min.js"
+          },
+          {
+            "bower_components/swiper/dist/js/swiper.min.js.map": "maps/swiper.min.js.map"
+          },
+          {
+            "bower_components/swiper/dist/css/swiper.min.css": "swiper.min.css"
+          }
         ]
       },
       "jquery.lazyload": "bower_components/jquery.lazyload/lazyload.min.js"
     }
+  },
+  "dependencies": {
+    "mm-antd": "antd#^3.10.4"
   }
 }
